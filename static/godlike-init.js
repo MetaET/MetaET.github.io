@@ -141,7 +141,7 @@ var options = {
     likeAnimationLiked: 'Liked!',
     likeAnimationDisliked: 'Disliked!',
     // cookieAlert: "<span class=\"nk-cookie-alert-close\"><span class=\"nk-icon-close\"></span></span>\n            Our Official Presale program has been launched. Go to the Dapps section for more info. <br><a href=\"buy\">Go to Presale</a>.\n           <div class=\"nk-gap\"></div>\n            <span class=\"nk-cookie-alert-confirm nk-btn link-effect-4 nk-btn-bg-white nk-btn-color-dark-1\">Dismiss</span>",
-    cookieAlert: "<span class=\"nk-cookie-alert-close\"><span class=\"nk-icon-close\"></span></span>\n            Our Official Presale program has been launched. Go to the Dapps section for more info. <br><a href=\"./index_MetaUfo的IDO页面.html\">Go to Presale</a>.\n           <div class=\"nk-gap\"></div>\n            <span class=\"nk-cookie-alert-confirm nk-btn link-effect-4 nk-btn-bg-white nk-btn-color-dark-1\">Dismiss</span>",
+    cookieAlert: "<span class=\"nk-cookie-alert-close\"><span class=\"nk-icon-close\"></span></span>\n            Our Official Presale program has been launched. Go to the Dapps section for more info. <br><a href=\"./index.html\">Go to Presale</a>.\n           <div class=\"nk-gap\"></div>\n            <span class=\"nk-cookie-alert-confirm nk-btn link-effect-4 nk-btn-bg-white nk-btn-color-dark-1\">Dismiss</span>",
     plainVideoIcon: '<span class="nk-video-icon"><i class="fa fa-play pl-5"></i></span>',
     plainVideoLoadIcon: '<span class="nk-loading-spinner"><i></i></span>',
     fullscreenVideoClose: '<span class="nk-icon-close"></span>',
