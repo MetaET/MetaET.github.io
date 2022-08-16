@@ -1,0 +1,2790 @@
+<!DOCTYPE html>
+<html lang="en-UK" style="font-size: 15px">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta
+			name="description"
+			content="MetaET is a decentralized gaming platform with play-to-earn elements, NFTs, and DeFi functionality like staking.The combination of the virtual world with the real world gives us new experiences and opportunities."
+		/>
+		<meta name="author" content="MetaET" />
+		<base href="" />
+		<title>MetaET IDO</title>
+
+		<link rel="stylesheet" href="./static/waves.min.css" />
+		<link rel="stylesheet" href="./static/owl.carousel.min.css" />
+		<link rel="stylesheet" href="./static/magnific-popup.css" />
+		<link rel="stylesheet" href="./static/cryptocoins.css" />
+
+		<!-- ido主样式表 注释则页面样式不显示-->
+		<link rel="stylesheet" href="./static/style.css" />
+
+		<!-- BUY IOD的输入框样式  注释则字体飘出框外 -->
+		<link href="./static/css/main.81db611a.chunk.css" rel="stylesheet" />
+
+		<style>
+			.swal2-popup.swal2-toast {
+				flex-direction: column;
+				align-items: stretch;
+				width: auto;
+				padding: 1.25em;
+				overflow-y: hidden;
+				background: #fff;
+				box-shadow: 0 0 0.625em #d9d9d9;
+			}
+			.swal2-popup.swal2-toast .swal2-header {
+				flex-direction: row;
+				padding: 0;
+			}
+			.swal2-popup.swal2-toast .swal2-title {
+				flex-grow: 1;
+				justify-content: flex-start;
+				margin: 0 0.625em;
+				font-size: 1em;
+			}
+			.swal2-popup.swal2-toast .swal2-loading {
+				justify-content: center;
+			}
+			.swal2-popup.swal2-toast .swal2-input {
+				height: 2em;
+				margin: 0.3125em auto;
+				font-size: 1em;
+			}
+			.swal2-popup.swal2-toast .swal2-validation-message {
+				font-size: 1em;
+			}
+			.swal2-popup.swal2-toast .swal2-footer {
+				margin: 0.5em 0 0;
+				padding: 0.5em 0 0;
+				font-size: 0.8em;
+			}
+			.swal2-popup.swal2-toast .swal2-close {
+				position: static;
+				width: 0.8em;
+				height: 0.8em;
+				line-height: 0.8;
+			}
+			.swal2-popup.swal2-toast .swal2-content {
+				justify-content: flex-start;
+				margin: 0 0.625em;
+				padding: 0;
+				font-size: 1em;
+				text-align: initial;
+			}
+			.swal2-popup.swal2-toast .swal2-html-container {
+				padding: 0.625em 0 0;
+			}
+			.swal2-popup.swal2-toast .swal2-html-container:empty {
+				padding: 0;
+			}
+			.swal2-popup.swal2-toast .swal2-icon {
+				width: 2em;
+				min-width: 2em;
+				height: 2em;
+				margin: 0 0.5em 0 0;
+			}
+			.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+				display: flex;
+				align-items: center;
+				font-size: 1.8em;
+				font-weight: 700;
+			}
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				.swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
+					font-size: 0.25em;
+				}
+			}
+			.swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
+				width: 2em;
+				height: 2em;
+			}
+			.swal2-popup.swal2-toast .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+				top: 0.875em;
+				width: 1.375em;
+			}
+			.swal2-popup.swal2-toast
+				.swal2-icon.swal2-error
+				[class^="swal2-x-mark-line"][class$="left"] {
+				left: 0.3125em;
+			}
+			.swal2-popup.swal2-toast
+				.swal2-icon.swal2-error
+				[class^="swal2-x-mark-line"][class$="right"] {
+				right: 0.3125em;
+			}
+			.swal2-popup.swal2-toast .swal2-actions {
+				flex: 1;
+				flex-basis: auto !important;
+				align-self: stretch;
+				width: auto;
+				height: 2.2em;
+				height: auto;
+				margin: 0 0.3125em;
+				margin-top: 0.3125em;
+				padding: 0;
+			}
+			.swal2-popup.swal2-toast .swal2-styled {
+				margin: 0.125em 0.3125em;
+				padding: 0.3125em 0.625em;
+				font-size: 1em;
+			}
+			.swal2-popup.swal2-toast .swal2-styled:focus {
+				box-shadow: 0 0 0 1px #fff, 0 0 0 3px rgba(100, 150, 200, 0.5);
+			}
+			.swal2-popup.swal2-toast .swal2-success {
+				border-color: #a5dc86;
+			}
+			.swal2-popup.swal2-toast .swal2-success [class^="swal2-success-circular-line"] {
+				position: absolute;
+				width: 1.6em;
+				height: 3em;
+				transform: rotate(45deg);
+				border-radius: 50%;
+			}
+			.swal2-popup.swal2-toast
+				.swal2-success
+				[class^="swal2-success-circular-line"][class$="left"] {
+				top: -0.8em;
+				left: -0.5em;
+				transform: rotate(-45deg);
+				transform-origin: 2em 2em;
+				border-radius: 4em 0 0 4em;
+			}
+			.swal2-popup.swal2-toast
+				.swal2-success
+				[class^="swal2-success-circular-line"][class$="right"] {
+				top: -0.25em;
+				left: 0.9375em;
+				transform-origin: 0 1.5em;
+				border-radius: 0 4em 4em 0;
+			}
+			.swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
+				width: 2em;
+				height: 2em;
+			}
+			.swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
+				top: 0;
+				left: 0.4375em;
+				width: 0.4375em;
+				height: 2.6875em;
+			}
+			.swal2-popup.swal2-toast .swal2-success [class^="swal2-success-line"] {
+				height: 0.3125em;
+			}
+			.swal2-popup.swal2-toast .swal2-success [class^="swal2-success-line"][class$="tip"] {
+				top: 1.125em;
+				left: 0.1875em;
+				width: 0.75em;
+			}
+			.swal2-popup.swal2-toast .swal2-success [class^="swal2-success-line"][class$="long"] {
+				top: 0.9375em;
+				right: 0.1875em;
+				width: 1.375em;
+			}
+			.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-tip {
+				-webkit-animation: swal2-toast-animate-success-line-tip 0.75s;
+				animation: swal2-toast-animate-success-line-tip 0.75s;
+			}
+			.swal2-popup.swal2-toast .swal2-success.swal2-icon-show .swal2-success-line-long {
+				-webkit-animation: swal2-toast-animate-success-line-long 0.75s;
+				animation: swal2-toast-animate-success-line-long 0.75s;
+			}
+			.swal2-popup.swal2-toast.swal2-show {
+				-webkit-animation: swal2-toast-show 0.5s;
+				animation: swal2-toast-show 0.5s;
+			}
+			.swal2-popup.swal2-toast.swal2-hide {
+				-webkit-animation: swal2-toast-hide 0.1s forwards;
+				animation: swal2-toast-hide 0.1s forwards;
+			}
+			.swal2-container {
+				display: flex;
+				position: fixed;
+				z-index: 1060;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 0.625em;
+				overflow-x: hidden;
+				transition: background-color 0.1s;
+				-webkit-overflow-scrolling: touch;
+			}
+			.swal2-container.swal2-backdrop-show,
+			.swal2-container.swal2-noanimation {
+				background: rgba(0, 0, 0, 0.4);
+			}
+			.swal2-container.swal2-backdrop-hide {
+				background: 0 0 !important;
+			}
+			.swal2-container.swal2-top {
+				align-items: flex-start;
+			}
+			.swal2-container.swal2-top-left,
+			.swal2-container.swal2-top-start {
+				align-items: flex-start;
+				justify-content: flex-start;
+			}
+			.swal2-container.swal2-top-end,
+			.swal2-container.swal2-top-right {
+				align-items: flex-start;
+				justify-content: flex-end;
+			}
+			.swal2-container.swal2-center {
+				align-items: center;
+			}
+			.swal2-container.swal2-center-left,
+			.swal2-container.swal2-center-start {
+				align-items: center;
+				justify-content: flex-start;
+			}
+			.swal2-container.swal2-center-end,
+			.swal2-container.swal2-center-right {
+				align-items: center;
+				justify-content: flex-end;
+			}
+			.swal2-container.swal2-bottom {
+				align-items: flex-end;
+			}
+			.swal2-container.swal2-bottom-left,
+			.swal2-container.swal2-bottom-start {
+				align-items: flex-end;
+				justify-content: flex-start;
+			}
+			.swal2-container.swal2-bottom-end,
+			.swal2-container.swal2-bottom-right {
+				align-items: flex-end;
+				justify-content: flex-end;
+			}
+			.swal2-container.swal2-bottom-end > :first-child,
+			.swal2-container.swal2-bottom-left > :first-child,
+			.swal2-container.swal2-bottom-right > :first-child,
+			.swal2-container.swal2-bottom-start > :first-child,
+			.swal2-container.swal2-bottom > :first-child {
+				margin-top: auto;
+			}
+			.swal2-container.swal2-grow-fullscreen > .swal2-modal {
+				display: flex !important;
+				flex: 1;
+				align-self: stretch;
+				justify-content: center;
+			}
+			.swal2-container.swal2-grow-row > .swal2-modal {
+				display: flex !important;
+				flex: 1;
+				align-content: center;
+				justify-content: center;
+			}
+			.swal2-container.swal2-grow-column {
+				flex: 1;
+				flex-direction: column;
+			}
+			.swal2-container.swal2-grow-column.swal2-bottom,
+			.swal2-container.swal2-grow-column.swal2-center,
+			.swal2-container.swal2-grow-column.swal2-top {
+				align-items: center;
+			}
+			.swal2-container.swal2-grow-column.swal2-bottom-left,
+			.swal2-container.swal2-grow-column.swal2-bottom-start,
+			.swal2-container.swal2-grow-column.swal2-center-left,
+			.swal2-container.swal2-grow-column.swal2-center-start,
+			.swal2-container.swal2-grow-column.swal2-top-left,
+			.swal2-container.swal2-grow-column.swal2-top-start {
+				align-items: flex-start;
+			}
+			.swal2-container.swal2-grow-column.swal2-bottom-end,
+			.swal2-container.swal2-grow-column.swal2-bottom-right,
+			.swal2-container.swal2-grow-column.swal2-center-end,
+			.swal2-container.swal2-grow-column.swal2-center-right,
+			.swal2-container.swal2-grow-column.swal2-top-end,
+			.swal2-container.swal2-grow-column.swal2-top-right {
+				align-items: flex-end;
+			}
+			.swal2-container.swal2-grow-column > .swal2-modal {
+				display: flex !important;
+				flex: 1;
+				align-content: center;
+				justify-content: center;
+			}
+			.swal2-container.swal2-no-transition {
+				transition: none !important;
+			}
+			.swal2-container:not(.swal2-top):not(.swal2-top-start):not(.swal2-top-end):not(.swal2-top-left):not(.swal2-top-right):not(.swal2-center-start):not(.swal2-center-end):not(.swal2-center-left):not(.swal2-center-right):not(.swal2-bottom):not(.swal2-bottom-start):not(.swal2-bottom-end):not(.swal2-bottom-left):not(.swal2-bottom-right):not(.swal2-grow-fullscreen)
+				> .swal2-modal {
+				margin: auto;
+			}
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				.swal2-container .swal2-modal {
+					margin: 0 !important;
+				}
+			}
+			.swal2-popup {
+				display: none;
+				position: relative;
+				box-sizing: border-box;
+				flex-direction: column;
+				justify-content: center;
+				width: 32em;
+				max-width: 100%;
+				padding: 1.25em;
+				border: none;
+				border-radius: 5px;
+				background: #fff;
+				font-family: inherit;
+				font-size: 1rem;
+			}
+			.swal2-popup:focus {
+				outline: 0;
+			}
+			.swal2-popup.swal2-loading {
+				overflow-y: hidden;
+			}
+			.swal2-header {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 0 1.8em;
+			}
+			.swal2-title {
+				position: relative;
+				max-width: 100%;
+				margin: 0 0 0.4em;
+				padding: 0;
+				color: #595959;
+				font-size: 1.875em;
+				font-weight: 600;
+				text-align: center;
+				text-transform: none;
+				word-wrap: break-word;
+			}
+			.swal2-actions {
+				display: flex;
+				z-index: 1;
+				box-sizing: border-box;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+				width: 100%;
+				margin: 1.25em auto 0;
+				padding: 0;
+			}
+			.swal2-actions:not(.swal2-loading) .swal2-styled[disabled] {
+				opacity: 0.4;
+			}
+			.swal2-actions:not(.swal2-loading) .swal2-styled:hover {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+			}
+			.swal2-actions:not(.swal2-loading) .swal2-styled:active {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+			}
+			.swal2-loader {
+				display: none;
+				align-items: center;
+				justify-content: center;
+				width: 2.2em;
+				height: 2.2em;
+				margin: 0 1.875em;
+				-webkit-animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+				animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
+				border-width: 0.25em;
+				border-style: solid;
+				border-radius: 100%;
+				border-color: #2778c4 transparent #2778c4 transparent;
+			}
+			.swal2-styled {
+				margin: 0.3125em;
+				padding: 0.625em 1.1em;
+				box-shadow: none;
+				font-weight: 500;
+			}
+			.swal2-styled:not([disabled]) {
+				cursor: pointer;
+			}
+			.swal2-styled.swal2-confirm {
+				border: 0;
+				border-radius: 0.25em;
+				background: initial;
+				background-color: #2778c4;
+				color: #fff;
+				font-size: 1em;
+			}
+			.swal2-styled.swal2-deny {
+				border: 0;
+				border-radius: 0.25em;
+				background: initial;
+				background-color: #d14529;
+				color: #fff;
+				font-size: 1em;
+			}
+			.swal2-styled.swal2-cancel {
+				border: 0;
+				border-radius: 0.25em;
+				background: initial;
+				background-color: #757575;
+				color: #fff;
+				font-size: 1em;
+			}
+			.swal2-styled:focus {
+				outline: 0;
+				box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.5);
+			}
+			.swal2-styled::-moz-focus-inner {
+				border: 0;
+			}
+			.swal2-footer {
+				justify-content: center;
+				margin: 1.25em 0 0;
+				padding: 1em 0 0;
+				border-top: 1px solid #eee;
+				color: #545454;
+				font-size: 1em;
+			}
+			.swal2-timer-progress-bar-container {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 0.25em;
+				overflow: hidden;
+				border-bottom-right-radius: 5px;
+				border-bottom-left-radius: 5px;
+			}
+			.swal2-timer-progress-bar {
+				width: 100%;
+				height: 0.25em;
+				background: rgba(0, 0, 0, 0.2);
+			}
+			.swal2-image {
+				max-width: 100%;
+				margin: 1.25em auto;
+			}
+			.swal2-close {
+				position: absolute;
+				z-index: 2;
+				top: 0;
+				right: 0;
+				align-items: center;
+				justify-content: center;
+				width: 1.2em;
+				height: 1.2em;
+				padding: 0;
+				overflow: hidden;
+				transition: color 0.1s ease-out;
+				border: none;
+				border-radius: 5px;
+				background: 0 0;
+				color: #ccc;
+				font-family: serif;
+				font-size: 2.5em;
+				line-height: 1.2;
+				cursor: pointer;
+			}
+			.swal2-close:hover {
+				transform: none;
+				background: 0 0;
+				color: #f27474;
+			}
+			.swal2-close:focus {
+				outline: 0;
+				box-shadow: inset 0 0 0 3px rgba(100, 150, 200, 0.5);
+			}
+			.swal2-close::-moz-focus-inner {
+				border: 0;
+			}
+			.swal2-content {
+				z-index: 1;
+				justify-content: center;
+				margin: 0;
+				padding: 0 1.6em;
+				color: #545454;
+				font-size: 1.125em;
+				font-weight: 400;
+				line-height: normal;
+				text-align: center;
+				word-wrap: break-word;
+			}
+			.swal2-checkbox,
+			.swal2-file,
+			.swal2-input,
+			.swal2-radio,
+			.swal2-select,
+			.swal2-textarea {
+				margin: 1em auto;
+			}
+			.swal2-file,
+			.swal2-input,
+			.swal2-textarea {
+				box-sizing: border-box;
+				width: 100%;
+				transition: border-color 0.3s, box-shadow 0.3s;
+				border: 1px solid #d9d9d9;
+				border-radius: 0.1875em;
+				background: inherit;
+				box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06);
+				color: inherit;
+				font-size: 1.125em;
+			}
+			.swal2-file.swal2-inputerror,
+			.swal2-input.swal2-inputerror,
+			.swal2-textarea.swal2-inputerror {
+				border-color: #f27474 !important;
+				box-shadow: 0 0 2px #f27474 !important;
+			}
+			.swal2-file:focus,
+			.swal2-input:focus,
+			.swal2-textarea:focus {
+				border: 1px solid #b4dbed;
+				outline: 0;
+				box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.5);
+			}
+			.swal2-file::-moz-placeholder,
+			.swal2-input::-moz-placeholder,
+			.swal2-textarea::-moz-placeholder {
+				color: #ccc;
+			}
+			.swal2-file:-ms-input-placeholder,
+			.swal2-input:-ms-input-placeholder,
+			.swal2-textarea:-ms-input-placeholder {
+				color: #ccc;
+			}
+			.swal2-file::placeholder,
+			.swal2-input::placeholder,
+			.swal2-textarea::placeholder {
+				color: #ccc;
+			}
+			.swal2-range {
+				margin: 1em auto;
+				background: #fff;
+			}
+			.swal2-range input {
+				width: 80%;
+			}
+			.swal2-range output {
+				width: 20%;
+				color: inherit;
+				font-weight: 600;
+				text-align: center;
+			}
+			.swal2-range input,
+			.swal2-range output {
+				height: 2.625em;
+				padding: 0;
+				font-size: 1.125em;
+				line-height: 2.625em;
+			}
+			.swal2-input {
+				height: 2.625em;
+				padding: 0 0.75em;
+			}
+			.swal2-input[type="number"] {
+				max-width: 10em;
+			}
+			.swal2-file {
+				background: inherit;
+				font-size: 1.125em;
+			}
+			.swal2-textarea {
+				height: 6.75em;
+				padding: 0.75em;
+			}
+			.swal2-select {
+				min-width: 50%;
+				max-width: 100%;
+				padding: 0.375em 0.625em;
+				background: inherit;
+				color: inherit;
+				font-size: 1.125em;
+			}
+			.swal2-checkbox,
+			.swal2-radio {
+				align-items: center;
+				justify-content: center;
+				background: #fff;
+				color: inherit;
+			}
+			.swal2-checkbox label,
+			.swal2-radio label {
+				margin: 0 0.6em;
+				font-size: 1.125em;
+			}
+			.swal2-checkbox input,
+			.swal2-radio input {
+				flex-shrink: 0;
+				margin: 0 0.4em;
+			}
+			.swal2-input-label {
+				display: flex;
+				justify-content: center;
+				margin: 1em auto;
+			}
+			.swal2-validation-message {
+				align-items: center;
+				justify-content: center;
+				margin: 0 -2.7em;
+				padding: 0.625em;
+				overflow: hidden;
+				background: #f0f0f0;
+				color: #666;
+				font-size: 1em;
+				font-weight: 300;
+			}
+			.swal2-validation-message::before {
+				content: "!";
+				display: inline-block;
+				width: 1.5em;
+				min-width: 1.5em;
+				height: 1.5em;
+				margin: 0 0.625em;
+				border-radius: 50%;
+				background-color: #f27474;
+				color: #fff;
+				font-weight: 600;
+				line-height: 1.5em;
+				text-align: center;
+			}
+			.swal2-icon {
+				position: relative;
+				box-sizing: content-box;
+				justify-content: center;
+				width: 5em;
+				height: 5em;
+				margin: 1.25em auto 1.875em;
+				border: 0.25em solid transparent;
+				border-radius: 50%;
+				border-color: #000;
+				font-family: inherit;
+				line-height: 5em;
+				cursor: default;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			.swal2-icon .swal2-icon-content {
+				display: flex;
+				align-items: center;
+				font-size: 3.75em;
+			}
+			.swal2-icon.swal2-error {
+				border-color: #f27474;
+				color: #f27474;
+			}
+			.swal2-icon.swal2-error .swal2-x-mark {
+				position: relative;
+				flex-grow: 1;
+			}
+			.swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+				display: block;
+				position: absolute;
+				top: 2.3125em;
+				width: 2.9375em;
+				height: 0.3125em;
+				border-radius: 0.125em;
+				background-color: #f27474;
+			}
+			.swal2-icon.swal2-error [class^="swal2-x-mark-line"][class$="left"] {
+				left: 1.0625em;
+				transform: rotate(45deg);
+			}
+			.swal2-icon.swal2-error [class^="swal2-x-mark-line"][class$="right"] {
+				right: 1em;
+				transform: rotate(-45deg);
+			}
+			.swal2-icon.swal2-error.swal2-icon-show {
+				-webkit-animation: swal2-animate-error-icon 0.5s;
+				animation: swal2-animate-error-icon 0.5s;
+			}
+			.swal2-icon.swal2-error.swal2-icon-show .swal2-x-mark {
+				-webkit-animation: swal2-animate-error-x-mark 0.5s;
+				animation: swal2-animate-error-x-mark 0.5s;
+			}
+			.swal2-icon.swal2-warning {
+				border-color: #facea8;
+				color: #f8bb86;
+			}
+			.swal2-icon.swal2-info {
+				border-color: #9de0f6;
+				color: #3fc3ee;
+			}
+			.swal2-icon.swal2-question {
+				border-color: #c9dae1;
+				color: #87adbd;
+			}
+			.swal2-icon.swal2-success {
+				border-color: #a5dc86;
+				color: #a5dc86;
+			}
+			.swal2-icon.swal2-success [class^="swal2-success-circular-line"] {
+				position: absolute;
+				width: 3.75em;
+				height: 7.5em;
+				transform: rotate(45deg);
+				border-radius: 50%;
+			}
+			.swal2-icon.swal2-success [class^="swal2-success-circular-line"][class$="left"] {
+				top: -0.4375em;
+				left: -2.0635em;
+				transform: rotate(-45deg);
+				transform-origin: 3.75em 3.75em;
+				border-radius: 7.5em 0 0 7.5em;
+			}
+			.swal2-icon.swal2-success [class^="swal2-success-circular-line"][class$="right"] {
+				top: -0.6875em;
+				left: 1.875em;
+				transform: rotate(-45deg);
+				transform-origin: 0 3.75em;
+				border-radius: 0 7.5em 7.5em 0;
+			}
+			.swal2-icon.swal2-success .swal2-success-ring {
+				position: absolute;
+				z-index: 2;
+				top: -0.25em;
+				left: -0.25em;
+				box-sizing: content-box;
+				width: 100%;
+				height: 100%;
+				border: 0.25em solid rgba(165, 220, 134, 0.3);
+				border-radius: 50%;
+			}
+			.swal2-icon.swal2-success .swal2-success-fix {
+				position: absolute;
+				z-index: 1;
+				top: 0.5em;
+				left: 1.625em;
+				width: 0.4375em;
+				height: 5.625em;
+				transform: rotate(-45deg);
+			}
+			.swal2-icon.swal2-success [class^="swal2-success-line"] {
+				display: block;
+				position: absolute;
+				z-index: 2;
+				height: 0.3125em;
+				border-radius: 0.125em;
+				background-color: #a5dc86;
+			}
+			.swal2-icon.swal2-success [class^="swal2-success-line"][class$="tip"] {
+				top: 2.875em;
+				left: 0.8125em;
+				width: 1.5625em;
+				transform: rotate(45deg);
+			}
+			.swal2-icon.swal2-success [class^="swal2-success-line"][class$="long"] {
+				top: 2.375em;
+				right: 0.5em;
+				width: 2.9375em;
+				transform: rotate(-45deg);
+			}
+			.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-tip {
+				-webkit-animation: swal2-animate-success-line-tip 0.75s;
+				animation: swal2-animate-success-line-tip 0.75s;
+			}
+			.swal2-icon.swal2-success.swal2-icon-show .swal2-success-line-long {
+				-webkit-animation: swal2-animate-success-line-long 0.75s;
+				animation: swal2-animate-success-line-long 0.75s;
+			}
+			.swal2-icon.swal2-success.swal2-icon-show .swal2-success-circular-line-right {
+				-webkit-animation: swal2-rotate-success-circular-line 4.25s ease-in;
+				animation: swal2-rotate-success-circular-line 4.25s ease-in;
+			}
+			.swal2-progress-steps {
+				flex-wrap: wrap;
+				align-items: center;
+				max-width: 100%;
+				margin: 0 0 1.25em;
+				padding: 0;
+				background: inherit;
+				font-weight: 600;
+			}
+			.swal2-progress-steps li {
+				display: inline-block;
+				position: relative;
+			}
+			.swal2-progress-steps .swal2-progress-step {
+				z-index: 20;
+				flex-shrink: 0;
+				width: 2em;
+				height: 2em;
+				border-radius: 2em;
+				background: #2778c4;
+				color: #fff;
+				line-height: 2em;
+				text-align: center;
+			}
+			.swal2-progress-steps .swal2-progress-step.swal2-active-progress-step {
+				background: #2778c4;
+			}
+			.swal2-progress-steps
+				.swal2-progress-step.swal2-active-progress-step
+				~ .swal2-progress-step {
+				background: #add8e6;
+				color: #fff;
+			}
+			.swal2-progress-steps
+				.swal2-progress-step.swal2-active-progress-step
+				~ .swal2-progress-step-line {
+				background: #add8e6;
+			}
+			.swal2-progress-steps .swal2-progress-step-line {
+				z-index: 10;
+				flex-shrink: 0;
+				width: 2.5em;
+				height: 0.4em;
+				margin: 0 -1px;
+				background: #2778c4;
+			}
+			[class^="swal2"] {
+				-webkit-tap-highlight-color: transparent;
+			}
+			.swal2-show {
+				-webkit-animation: swal2-show 0.3s;
+				animation: swal2-show 0.3s;
+			}
+			.swal2-hide {
+				-webkit-animation: swal2-hide 0.15s forwards;
+				animation: swal2-hide 0.15s forwards;
+			}
+			.swal2-noanimation {
+				transition: none;
+			}
+			.swal2-scrollbar-measure {
+				position: absolute;
+				top: -9999px;
+				width: 50px;
+				height: 50px;
+				overflow: scroll;
+			}
+			.swal2-rtl .swal2-close {
+				right: auto;
+				left: 0;
+			}
+			.swal2-rtl .swal2-timer-progress-bar {
+				right: 0;
+				left: auto;
+			}
+			@supports (-ms-accelerator: true) {
+				.swal2-range input {
+					width: 100% !important;
+				}
+				.swal2-range output {
+					display: none;
+				}
+			}
+			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+				.swal2-range input {
+					width: 100% !important;
+				}
+				.swal2-range output {
+					display: none;
+				}
+			}
+			@-webkit-keyframes swal2-toast-show {
+				0% {
+					transform: translateY(-0.625em) rotateZ(2deg);
+				}
+				33% {
+					transform: translateY(0) rotateZ(-2deg);
+				}
+				66% {
+					transform: translateY(0.3125em) rotateZ(2deg);
+				}
+				100% {
+					transform: translateY(0) rotateZ(0);
+				}
+			}
+			@keyframes swal2-toast-show {
+				0% {
+					transform: translateY(-0.625em) rotateZ(2deg);
+				}
+				33% {
+					transform: translateY(0) rotateZ(-2deg);
+				}
+				66% {
+					transform: translateY(0.3125em) rotateZ(2deg);
+				}
+				100% {
+					transform: translateY(0) rotateZ(0);
+				}
+			}
+			@-webkit-keyframes swal2-toast-hide {
+				100% {
+					transform: rotateZ(1deg);
+					opacity: 0;
+				}
+			}
+			@keyframes swal2-toast-hide {
+				100% {
+					transform: rotateZ(1deg);
+					opacity: 0;
+				}
+			}
+			@-webkit-keyframes swal2-toast-animate-success-line-tip {
+				0% {
+					top: 0.5625em;
+					left: 0.0625em;
+					width: 0;
+				}
+				54% {
+					top: 0.125em;
+					left: 0.125em;
+					width: 0;
+				}
+				70% {
+					top: 0.625em;
+					left: -0.25em;
+					width: 1.625em;
+				}
+				84% {
+					top: 1.0625em;
+					left: 0.75em;
+					width: 0.5em;
+				}
+				100% {
+					top: 1.125em;
+					left: 0.1875em;
+					width: 0.75em;
+				}
+			}
+			@keyframes swal2-toast-animate-success-line-tip {
+				0% {
+					top: 0.5625em;
+					left: 0.0625em;
+					width: 0;
+				}
+				54% {
+					top: 0.125em;
+					left: 0.125em;
+					width: 0;
+				}
+				70% {
+					top: 0.625em;
+					left: -0.25em;
+					width: 1.625em;
+				}
+				84% {
+					top: 1.0625em;
+					left: 0.75em;
+					width: 0.5em;
+				}
+				100% {
+					top: 1.125em;
+					left: 0.1875em;
+					width: 0.75em;
+				}
+			}
+			@-webkit-keyframes swal2-toast-animate-success-line-long {
+				0% {
+					top: 1.625em;
+					right: 1.375em;
+					width: 0;
+				}
+				65% {
+					top: 1.25em;
+					right: 0.9375em;
+					width: 0;
+				}
+				84% {
+					top: 0.9375em;
+					right: 0;
+					width: 1.125em;
+				}
+				100% {
+					top: 0.9375em;
+					right: 0.1875em;
+					width: 1.375em;
+				}
+			}
+			@keyframes swal2-toast-animate-success-line-long {
+				0% {
+					top: 1.625em;
+					right: 1.375em;
+					width: 0;
+				}
+				65% {
+					top: 1.25em;
+					right: 0.9375em;
+					width: 0;
+				}
+				84% {
+					top: 0.9375em;
+					right: 0;
+					width: 1.125em;
+				}
+				100% {
+					top: 0.9375em;
+					right: 0.1875em;
+					width: 1.375em;
+				}
+			}
+			@-webkit-keyframes swal2-show {
+				0% {
+					transform: scale(0.7);
+				}
+				45% {
+					transform: scale(1.05);
+				}
+				80% {
+					transform: scale(0.95);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+			@keyframes swal2-show {
+				0% {
+					transform: scale(0.7);
+				}
+				45% {
+					transform: scale(1.05);
+				}
+				80% {
+					transform: scale(0.95);
+				}
+				100% {
+					transform: scale(1);
+				}
+			}
+			@-webkit-keyframes swal2-hide {
+				0% {
+					transform: scale(1);
+					opacity: 1;
+				}
+				100% {
+					transform: scale(0.5);
+					opacity: 0;
+				}
+			}
+			@keyframes swal2-hide {
+				0% {
+					transform: scale(1);
+					opacity: 1;
+				}
+				100% {
+					transform: scale(0.5);
+					opacity: 0;
+				}
+			}
+			@-webkit-keyframes swal2-animate-success-line-tip {
+				0% {
+					top: 1.1875em;
+					left: 0.0625em;
+					width: 0;
+				}
+				54% {
+					top: 1.0625em;
+					left: 0.125em;
+					width: 0;
+				}
+				70% {
+					top: 2.1875em;
+					left: -0.375em;
+					width: 3.125em;
+				}
+				84% {
+					top: 3em;
+					left: 1.3125em;
+					width: 1.0625em;
+				}
+				100% {
+					top: 2.8125em;
+					left: 0.8125em;
+					width: 1.5625em;
+				}
+			}
+			@keyframes swal2-animate-success-line-tip {
+				0% {
+					top: 1.1875em;
+					left: 0.0625em;
+					width: 0;
+				}
+				54% {
+					top: 1.0625em;
+					left: 0.125em;
+					width: 0;
+				}
+				70% {
+					top: 2.1875em;
+					left: -0.375em;
+					width: 3.125em;
+				}
+				84% {
+					top: 3em;
+					left: 1.3125em;
+					width: 1.0625em;
+				}
+				100% {
+					top: 2.8125em;
+					left: 0.8125em;
+					width: 1.5625em;
+				}
+			}
+			@-webkit-keyframes swal2-animate-success-line-long {
+				0% {
+					top: 3.375em;
+					right: 2.875em;
+					width: 0;
+				}
+				65% {
+					top: 3.375em;
+					right: 2.875em;
+					width: 0;
+				}
+				84% {
+					top: 2.1875em;
+					right: 0;
+					width: 3.4375em;
+				}
+				100% {
+					top: 2.375em;
+					right: 0.5em;
+					width: 2.9375em;
+				}
+			}
+			@keyframes swal2-animate-success-line-long {
+				0% {
+					top: 3.375em;
+					right: 2.875em;
+					width: 0;
+				}
+				65% {
+					top: 3.375em;
+					right: 2.875em;
+					width: 0;
+				}
+				84% {
+					top: 2.1875em;
+					right: 0;
+					width: 3.4375em;
+				}
+				100% {
+					top: 2.375em;
+					right: 0.5em;
+					width: 2.9375em;
+				}
+			}
+			@-webkit-keyframes swal2-rotate-success-circular-line {
+				0% {
+					transform: rotate(-45deg);
+				}
+				5% {
+					transform: rotate(-45deg);
+				}
+				12% {
+					transform: rotate(-405deg);
+				}
+				100% {
+					transform: rotate(-405deg);
+				}
+			}
+			@keyframes swal2-rotate-success-circular-line {
+				0% {
+					transform: rotate(-45deg);
+				}
+				5% {
+					transform: rotate(-45deg);
+				}
+				12% {
+					transform: rotate(-405deg);
+				}
+				100% {
+					transform: rotate(-405deg);
+				}
+			}
+			@-webkit-keyframes swal2-animate-error-x-mark {
+				0% {
+					margin-top: 1.625em;
+					transform: scale(0.4);
+					opacity: 0;
+				}
+				50% {
+					margin-top: 1.625em;
+					transform: scale(0.4);
+					opacity: 0;
+				}
+				80% {
+					margin-top: -0.375em;
+					transform: scale(1.15);
+				}
+				100% {
+					margin-top: 0;
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+			@keyframes swal2-animate-error-x-mark {
+				0% {
+					margin-top: 1.625em;
+					transform: scale(0.4);
+					opacity: 0;
+				}
+				50% {
+					margin-top: 1.625em;
+					transform: scale(0.4);
+					opacity: 0;
+				}
+				80% {
+					margin-top: -0.375em;
+					transform: scale(1.15);
+				}
+				100% {
+					margin-top: 0;
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes swal2-animate-error-icon {
+				0% {
+					transform: rotateX(100deg);
+					opacity: 0;
+				}
+				100% {
+					transform: rotateX(0);
+					opacity: 1;
+				}
+			}
+			@keyframes swal2-animate-error-icon {
+				0% {
+					transform: rotateX(100deg);
+					opacity: 0;
+				}
+				100% {
+					transform: rotateX(0);
+					opacity: 1;
+				}
+			}
+			@-webkit-keyframes swal2-rotate-loading {
+				0% {
+					transform: rotate(0);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@keyframes swal2-rotate-loading {
+				0% {
+					transform: rotate(0);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+				overflow: hidden;
+			}
+			body.swal2-height-auto {
+				height: auto !important;
+			}
+			body.swal2-no-backdrop .swal2-container {
+				top: auto;
+				right: auto;
+				bottom: auto;
+				left: auto;
+				max-width: calc(100% - 0.625em * 2);
+				background-color: transparent !important;
+			}
+			body.swal2-no-backdrop .swal2-container > .swal2-modal {
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-top {
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-top-left,
+			body.swal2-no-backdrop .swal2-container.swal2-top-start {
+				top: 0;
+				left: 0;
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-top-end,
+			body.swal2-no-backdrop .swal2-container.swal2-top-right {
+				top: 0;
+				right: 0;
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-center {
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-center-left,
+			body.swal2-no-backdrop .swal2-container.swal2-center-start {
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-center-end,
+			body.swal2-no-backdrop .swal2-container.swal2-center-right {
+				top: 50%;
+				right: 0;
+				transform: translateY(-50%);
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-bottom {
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-bottom-left,
+			body.swal2-no-backdrop .swal2-container.swal2-bottom-start {
+				bottom: 0;
+				left: 0;
+			}
+			body.swal2-no-backdrop .swal2-container.swal2-bottom-end,
+			body.swal2-no-backdrop .swal2-container.swal2-bottom-right {
+				right: 0;
+				bottom: 0;
+			}
+			@media print {
+				body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
+					overflow-y: scroll !important;
+				}
+				body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)
+					> [aria-hidden="true"] {
+					display: none;
+				}
+				body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) .swal2-container {
+					position: static !important;
+				}
+			}
+			body.swal2-toast-shown .swal2-container {
+				background-color: transparent;
+			}
+			body.swal2-toast-shown .swal2-container.swal2-top {
+				top: 0;
+				right: auto;
+				bottom: auto;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			body.swal2-toast-shown .swal2-container.swal2-top-end,
+			body.swal2-toast-shown .swal2-container.swal2-top-right {
+				top: 0;
+				right: 0;
+				bottom: auto;
+				left: auto;
+			}
+			body.swal2-toast-shown .swal2-container.swal2-top-left,
+			body.swal2-toast-shown .swal2-container.swal2-top-start {
+				top: 0;
+				right: auto;
+				bottom: auto;
+				left: 0;
+			}
+			body.swal2-toast-shown .swal2-container.swal2-center-left,
+			body.swal2-toast-shown .swal2-container.swal2-center-start {
+				top: 50%;
+				right: auto;
+				bottom: auto;
+				left: 0;
+				transform: translateY(-50%);
+			}
+			body.swal2-toast-shown .swal2-container.swal2-center {
+				top: 50%;
+				right: auto;
+				bottom: auto;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			body.swal2-toast-shown .swal2-container.swal2-center-end,
+			body.swal2-toast-shown .swal2-container.swal2-center-right {
+				top: 50%;
+				right: 0;
+				bottom: auto;
+				left: auto;
+				transform: translateY(-50%);
+			}
+			body.swal2-toast-shown .swal2-container.swal2-bottom-left,
+			body.swal2-toast-shown .swal2-container.swal2-bottom-start {
+				top: auto;
+				right: auto;
+				bottom: 0;
+				left: 0;
+			}
+			body.swal2-toast-shown .swal2-container.swal2-bottom {
+				top: auto;
+				right: auto;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			body.swal2-toast-shown .swal2-container.swal2-bottom-end,
+			body.swal2-toast-shown .swal2-container.swal2-bottom-right {
+				top: auto;
+				right: 0;
+				bottom: 0;
+				left: auto;
+			}
+		</style>
+
+		<style data-jss="" data-meta="MuiBackdrop">
+			.MuiBackdrop-root {
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				z-index: -1;
+				position: fixed;
+				align-items: center;
+				justify-content: center;
+				background-color: rgba(0, 0, 0, 0.5);
+				-webkit-tap-highlight-color: transparent;
+			}
+			.MuiBackdrop-invisible {
+				background-color: transparent;
+			}
+		</style>
+
+		<style data-jss="" data-meta="MuiCircularProgress">
+			.MuiCircularProgress-root {
+				display: inline-block;
+			}
+			.MuiCircularProgress-static {
+				transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			}
+			.MuiCircularProgress-indeterminate {
+				animation: MuiCircularProgress-keyframes-circular-rotate 1.4s linear infinite;
+			}
+			.MuiCircularProgress-determinate {
+				transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			}
+			.MuiCircularProgress-colorPrimary {
+				color: #3f51b5;
+			}
+			.MuiCircularProgress-colorSecondary {
+				color: #f50057;
+			}
+			.MuiCircularProgress-svg {
+				display: block;
+			}
+			.MuiCircularProgress-circle {
+				stroke: currentColor;
+			}
+			.MuiCircularProgress-circleStatic {
+				transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			}
+			.MuiCircularProgress-circleIndeterminate {
+				animation: MuiCircularProgress-keyframes-circular-dash 1.4s ease-in-out infinite;
+				stroke-dasharray: 80px, 200px;
+				stroke-dashoffset: 0px;
+			}
+			.MuiCircularProgress-circleDeterminate {
+				transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+			}
+			/* @-webkit-keyframes MuiCircularProgress-keyframes-circular-rotate { */
+			@keyframes MuiCircularProgress-keyframes-circular-rotate {
+				0% {
+					transform-origin: 50% 50%;
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			/* @-webkit-keyframes MuiCircularProgress-keyframes-circular-dash { */
+			@keyframes MuiCircularProgress-keyframes-circular-dash {
+				0% {
+					stroke-dasharray: 1px, 200px;
+					stroke-dashoffset: 0px;
+				}
+				50% {
+					stroke-dasharray: 100px, 200px;
+					stroke-dashoffset: -15px;
+				}
+				100% {
+					stroke-dasharray: 100px, 200px;
+					stroke-dashoffset: -125px;
+				}
+			}
+			.MuiCircularProgress-circleDisableShrink {
+				animation: none;
+			}
+		</style>
+	</head>
+
+	<!-- body里两个div块， 一个，一个-->
+	<body class="dashboard">
+		<!-- 未知功能 游戏装载-->
+		<div id="preloader" style="display: none">
+			<div class="sk-three-bounce">
+				<div class="sk-child sk-bounce1"></div>
+				<div class="sk-child sk-bounce2"></div>
+				<div class="sk-child sk-bounce3"></div>
+			</div>
+		</div>
+
+		<!-- 主块：index内容主页面。布局分为上中下，涵盖 头部菜单栏 中间ido买入和claim空投区 下部联系方式区域。 样式设置 背景图片 等框架内容  -->
+		<div id="main-wrapper" style="background-image: url(./static/idobg.png)" class="show">
+		<!-- <div id="main-wrapper" style="background-image: url(../imgs/background-home22.jpg)" class="show"> -->
+			<div id="root" style="display: flex">
+				<!-- 无内容 -->
+				<div></div>
+				<div></div>
+				<div
+					class="MuiBackdrop-root"
+					aria-hidden="true"
+					style="
+						opacity: 0;
+						visibility: hidden;
+						z-index: 1000;
+						color: rgb(255, 255, 255);
+					"
+				>
+					<div class="flex-center">
+						<div
+							class="MuiCircularProgress-root MuiCircularProgress-indeterminate"
+							role="progressbar"
+							style="width: 40px; height: 40px"
+						>
+							<svg class="MuiCircularProgress-svg" viewBox="22 22 44 44">
+								<circle
+									class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate"
+									cx="44"
+									cy="44"
+									r="20.2"
+									fill="none"
+									stroke-width="3.6"
+								></circle>
+							</svg>
+						</div>
+					</div>
+				</div>
+
+				<!-- index页面布局 上中下 内容。定义id=e  -->
+				<div id="e" style="width: 100%">
+					<!-- index页面头部 分三部分：左侧的图标 中间的导航菜单 右侧的余额显示和钱包链接部分 -->
+					<div class="header dashboard">
+						<div class="container">
+							<div class="row">
+								<div class="col-xl-12">
+									<!-- 顶部的菜单栏 分左侧 中部 右侧三个部分 能自动上拉 -->
+									<nav class="navbar navbar-expand-lg navbar-light px-0">
+										<!-- 顶栏左侧的 项目图标 -->
+										<a class="navbar-brand" href="./home.html"
+											><img src="./static/logocoin.png" alt=""
+										/></a>
+										<!-- 顶栏左侧的 按钮分割 这里的按钮似乎是空的 只是为了分割效果-->
+										<button
+											class="navbar-toggler"
+											type="button"
+											data-toggle="collapse"
+											data-target="#navbarSupportedContent"
+											aria-controls="navbarSupportedContent"
+											aria-expanded="false"
+											aria-label="Toggle navigation"
+										>
+											<span class="navbar-toggler-icon"></span>
+										</button>
+
+										<!-- 顶栏中部的 导航菜单 内部包含自定义列表项 Home PancakeSwap Whitepaper Smart Contract 等 -->
+										<div
+											class="collapse navbar-collapse"
+											id="navbarSupportedContent"
+										>
+											<ul class="navbar-nav">
+												<li class="nav-item">
+													<a class="nav-link" href="./home.html">Home</a>
+												</li>
+
+												<li class="nav-item">
+													<a
+													target="_bank"
+													href="https://dexscreener.com/bsc/0x8e744ec2795c8b836689d1b4ebe1489204357dac"
+													class="link-effect-4 ready"
+													>
+														<span class="nav-link cursor">View Chart</span>
+													</a>
+												</li>
+
+												<li class="nav-item">
+													<a
+													target="_blank"
+													href="https://pancakeswap.finance/swap?outputCurrency=0x2ad7F18DcFA131e33411770A9c6c4fe49b187Bc2&inputCurrency=0xe9e7cea3dedca5984780bafc599bd69add087d56"
+													>
+														<span class="nav-link cursor"
+														>PancakeSwap</span
+													>
+													</a>
+												</li>
+
+												<li class="nav-item">
+													<a
+													target="_blank"
+													href="https://ropsten.etherscan.io/address/0x604dc970db5b31459e09956a5005ae68d0f75d45"
+													>
+														<span class="nav-link cursor"
+														>Smart Contract</span
+													>
+													</a>
+												</li>
+
+												<li class="nav-item">
+													<a class="nav-link">DAO</a>
+												</li>
+
+												<li class="nav-item">
+													<a class="nav-link">Nft Market</a>
+												</li>
+
+												<li class="nav-item">
+													<a class="nav-link">METAVERSE</a>
+												</li>
+
+												<!-- <li class="nav-item">
+													<a class="nav-link">Game</a>
+												</li> -->
+											</ul>
+										</div>
+
+										<!-- 顶栏右侧的 显示balance余额 和 web3账户钱包connect链接项 -->
+										<div class="dashboard_log my-2">
+											<div class="d-flex align-items-center">
+												<div class="account_money">
+													<ul>
+														<!-- 钱包显示BNB余额 id=bal -->
+														<li
+															class="crypto"
+															style="
+																border-radius: 30px 0px 0px 30px;
+															"
+														>
+															<span id="bal">0.00 BNB</span
+															><img
+																src="./static/bnb.webp"
+																alt="bnb"
+															/>
+														</li>
+
+														<!-- 钱包链接项 id=walletbutton -->
+														<li class="usd">
+															<a
+																id="walletbutton"
+																class="show_connect_wallet"
+																><span>Connect</span></a
+															>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- index页面标题 位于页面头部下方 用来通知内容等  -->
+					<div class="page_title section-padding">
+						<div class="container">
+							<div class="row">
+								<div class="col-xl-12">
+									<div class="page_title-content">
+										<p>
+											<i class="fa fa-bell"></i>Invite your Friends to this
+											IDO and get 10% of the BNB invested + 10% of the MetaET
+											tokens purchased sent to your Bep20 address instantly.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- index页面的功能区域 分为2行2列：1.1 ido和airdorp的标签显示及标签内容； 1.2 referral推荐奖励详细内容 带Claim按钮； 2.1买卖视频； 2.2 FAQ问题 -->
+					<div class="buy_sell mb-80">
+						<div class="container">
+							<!-- 1. 第一行 1.1 ido和airdorp的标签显示 及 标签内容； 1.2 referral推荐奖励详细内容； -->
+							<div class="row">
+								<!-- 1.1 ido和airdorp的标签 及 标签内容  -->
+								<div class="col-xl-5 col-lg-5 col-md-12">
+									<div class="card">
+										<div class="card-body">
+											<div class="buy-sell-widget">
+												<!-- 1.1.1 ido和airdorp的标签 -->
+												<ul class="nav nav-tabs">
+													<!-- ido购买标签-->
+													<li class="nav-item">
+														<a
+															class="nav-link active"
+															data-toggle="tab"
+															href="#buy"
+															><small>BUY IDO</small></a
+														>
+													</li>
+
+													<!-- Aridrop空投标签-->
+													<li class="nav-item">
+														<a
+															class="nav-link"
+															data-toggle="tab"
+															href="#claim"
+															><small>JOIN AIRDROP</small></a
+														>
+													</li>
+												</ul>
+
+												<!-- 1.1.2 ido和airdorp的标签内容  根据上面的标签切换ido和airdrop的内容-->
+												<div class="tab-content tab-content-default">
+													<!-- ido购买表单内容 -->
+													<div
+														class="tab-pane fade show active"
+														id="buy"
+														role="tabpanel"
+													>
+														<form>
+															<!-- 行1 填入bnb购买的金额 -->
+															<div class="mb-3">
+																<!-- 提示标签 -->
+																<label class="form-label"
+																	>Enter BNB amount</label
+																>
+																<!-- 输入框1->输入购买金额； 输入框2->显示对应获得的代币数量 -->
+																<div class="input-group">
+																	<div class="flex-sb">
+																		<input
+																			id="enter_Amount"
+																			aria-label="First name"
+																			maxlength="7"
+																			class="form-control"
+																			type="text"
+																			placeholder="Enter Amount"
+																			value=""
+																		/>
+																		<div
+																			style="
+																				height: 0px;
+																				width: 0px;
+																				position: relative;
+																			"
+																		>
+																			<div
+																				style="
+																					position: absolute;
+																					top: -10px;
+																					left: -40px;
+																				"
+																			>
+																				BNB
+																			</div>
+																		</div>
+																	</div>
+																	<div class="flex-sb">
+																		<input
+																			id="to_receive"
+																			aria-label="First name"
+																			readonly=""
+																			class="form-control"
+																			type="text"
+																			placeholder="To Receive"
+																			value=""
+																		/>
+																		<div
+																			style="
+																				height: 0px;
+																				width: 0px;
+																				position: relative;
+																			"
+																		>
+																			<div
+																				style="
+																					position: absolute;
+																					top: -10px;
+																					left: -80px;
+																				"
+																			>
+																				MetaET
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<!-- 购买输入框下方的提示行 -->
+																<div
+																	class="d-flex justify-content-between mt-2"
+																>
+																	<p>IDO Level:95.86%</p>
+																	<h5>$MetaET to Receive</h5>
+																</div>
+															</div>
+
+															<!-- 行2 购买支付方式 -->
+															<div class="mb-3">
+																<!-- 标签 -->
+																<label class="form-label"
+																	>Payment Method</label
+																>
+																<!-- 下拉菜单 选择支付方式 -->
+																<div class="input-group mb-3">
+																	<!-- 下拉菜单左侧的图片标签 -->
+																	<div
+																		class="input-group-prepend"
+																	>
+																		<label
+																			class="input-group-text py-3"
+																			><img
+																				src="./static/bnb.webp"
+																				alt="bnb"
+																		/></label>
+																	</div>
+																	<!-- 下拉菜单选择 主链 -->
+																	<select class="form-control">
+																		<option>BNB (BSC)</option>
+																	</select>
+																</div>
+																<label class="form-label"></label>
+															</div>
+
+															<!-- 行3 购买确认按钮 id=buttons -->
+															<!-- <div class="mb-3" id="buttons"> -->
+															<div class="mb-3">
+																<!-- <a class="btn btn-success w-100" -->
+																<a
+																	id="enter_amount_or_buy_ido"
+																	class="show_connect_wallet btn btn-success w-100"
+																	><i class="fa fa-link"></i>
+																	CONNECT WALLET</a
+																>
+															</div>
+														</form>
+													</div>
+
+													<!-- airdrop空投表单内容 -->
+													<div class="tab-pane fade" id="claim">
+														<div class="mb-3">
+															<label class="form-label"
+																>Click the
+																<b>CLAIM AIRDROP</b> button to get
+																Airdrop Tokens, once per account.
+																<br />
+																Copy your recommendation link and
+																recommend it to your friends and
+																click the CLAIM REWARD button to
+																get the Referral Reward. <br
+															/></label>
+															<font class="text-success">
+																Airdrop Reward: 100 MetaET Tokens
+																<br />
+																Referral Reward: 50 MetaET Tokens
+															</font>
+															<br />
+															<div style="width: 100%">
+																	Join our channels and groups
+																	for more benefits on link:
+																</p>
+																<p>
+																	<a
+																		style="
+																			color: rgb(
+																				33,
+																				150,
+																				243
+																			);
+																			cursor: pointer;
+																		"
+																		href="https://twitter.com/MetaET_Channel"
+																		target="_blank"
+																		>https://twitter.com/MetaET_Channel</a
+																	>
+																</p>
+																<p>
+																	<a
+																		style="
+																			color: rgb(
+																				33,
+																				150,
+																				243
+																			);
+																			cursor: pointer;
+																		"
+																		href="https://t.me/MetaET_1"
+																		target="_blank"
+																		>https://t.me/MetaET_Channel</a
+																	>
+																</p>	
+																<!-- <p>
+																	<a
+																		style="
+																			color: rgb(
+																				33,
+																				150,
+																				243
+																			);
+																			cursor: pointer;
+																		"
+																		href="https://t.me/MetaET_2"
+																		target="_blank"
+																		>https://t.me/MetaET_2</a
+																	>
+																</p>	
+																<p>
+																	<a
+																		style="
+																			color: rgb(
+																				33,
+																				150,
+																				243
+																			);
+																			cursor: pointer;
+																		"
+																		href="https://t.me/MetaET_3"
+																		target="_blank"
+																		>https://t.me/MetaET_3</a
+																	>
+																</p>	 -->
+																<!-- <br /> -->
+																<!-- <div
+																	style="
+																		width: 100%;
+																		height: 50px;
+																		line-height: 50px;
+																		padding: 0px 12px;
+																		border: 1px solid
+																			rgb(214, 213, 250);
+																		border-radius: 8px;
+																	"
+																>
+																	<input
+																		type="text"
+																		placeholder="Please enter verification code"
+																		maxlength="16"
+																		value=""
+																		style="
+																			width: 100%;
+																			height: 100%;
+																			border: none;
+																			outline: medium;
+																		"
+																	/>
+																</div> -->
+
+																<!-- 链接钱包按钮 -->
+															</div>
+															<!-- <br /><a class="btn btn-success w-100" -->
+															<br /><a
+																id="claim_airDrop"
+																class="show_connect_wallet btn btn-success w-100"
+																><i class="fa fa-link"></i> CONNECT
+																WALLET</a
+															>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- 1.2 referral推荐奖励详细内容 带Claim按钮 -->
+								<div class="col-xl-7 col-lg-7 col-md-12">
+									<div class="card">
+										<div class="card-body">
+											<div class="buyer-seller">
+												<!-- 1.2.1 referral推荐链接 -->
+												<div class="d-flex justify-content-between mb-3">
+													<div class="buyer-info">
+														<div class="d-flex align-items-start">
+															<img
+																class="me-3"
+																src="./static/logocoin.png"
+																alt=""
+																width="50"
+															/>
+															<!-- 推荐链接内容 id= refaddress -->
+															<div class="flex-grow-1">
+																<h4>Your Referral Link</h4>
+																<h5 id="refaddress">
+																	Connect wallet to see Referral
+																	link.
+																</h5>
+															</div>
+														</div>
+													</div>
+													<div class="seller-info text-right">
+														<div class="d-flex align-items-start">
+															<div
+																class="flex-grow-1"
+																id="showcopy"
+															></div>
+														</div>
+													</div>
+												</div>
+
+												<!-- 1.2.2 表格显示 referral推荐奖励内容 和 IDO开始结束等信息 -->
+												<div class="table-responsive">
+													<table class="table">
+														<tbody>
+															<!-- 已推荐总人数 -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	Total invited
+																</td>
+																<td
+																	id="valp"
+																	style="padding: 18px 3px"
+																>
+																	0 Users
+																</td>
+															</tr>
+															<!-- 已推荐的带获取tokens -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	Referral Reward
+																</td>
+																<td style="padding: 18px 3px">
+																	<span id="rewardNum">
+																		0 MetaET</span
+																	>
+																	<a
+																		class="btn btn-info"
+																		style="
+																			float: right;
+																			margin-top: -18px;
+																			color: rgb(51, 51, 51);
+																			background-color: rgb(
+																				253,
+																				212,
+																				53
+																			);
+																			border: none;
+																			white-space: nowrap;
+																		"
+																		id="ClaimRewad_Butten"
+																		>Claim Reward</a
+																	>
+																</td>
+															</tr>
+															<!-- ido的bnb购买比率 -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	IDO Rate
+																</td>
+																<td style="padding: 18px 3px">
+																	0.00004 BNB/1 MetaET
+																</td>
+															</tr>
+															<!-- ido的开始时间 -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	IDO Start
+																</td>
+																<td style="padding: 18px 3px">
+																	Wednesday, Mar 30, 2022
+																</td>
+															</tr>
+															<!-- ido的结束时间 -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	IDO end
+																</td>
+																<td style="padding: 18px 3px">
+																	Friday, April 29, 2022
+																</td>
+															</tr>
+															<!-- ido的解锁时间 -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	Unlock date
+																</td>
+																<td style="padding: 18px 3px">
+																	<div class="text-success">
+																		June 28, 2022
+																	</div>
+																</td>
+															</tr>
+															<!-- 表单底部的几个按钮：包括 View Chart 、View Audit、 Locked LP -->
+															<tr>
+																<td style="padding: 18px 3px">
+																	<a
+																		target="_bank"
+																		href="https://dexscreener.com/bsc/0x8e744ec2795c8b836689d1b4ebe1489204357dac"
+																		rel="noopener"
+																		class="btn btn-info"
+																		>View Chart</a
+																	>
+																</td>
+																<td style="padding: 18px 3px">
+																	<a
+																		target="_blank"
+																		href="https://github.com/TechRate/Smart-Contract-Audits/blob/main/March/MetaUFO.pdf"
+																		rel="noopener"
+																		class="btn btn-info"
+																		style="
+																			border: none;
+																			background-color: rgb(
+																				76,
+																				175,
+																				80
+																			);
+																		"
+																		>View Audit</a
+																	>
+																</td>
+																<td style="padding: 18px 3px">
+																	<a
+																		target="_blank"
+																		href="https://www.team.finance/view-coin/0x2ad7F18DcFA131e33411770A9c6c4fe49b187Bc2"
+																		rel="noopener"
+																		class="btn btn-success"
+																		>Locked LP</a
+																	>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- 2. 第二行 买卖视频 和 FAQ问题 两列内容 -->
+							<div class="row">
+								<!-- 2.1 买卖视频 -->
+								<div class="col-xl-5">
+									<div class="intro-video-play">
+										<div class="play-btn">
+											<div
+												style="
+													width: 100%;
+													height: 100%;
+													padding: 75% 0px 0px;
+													position: relative;
+													background-color: rgb(0, 0, 0);
+												"
+											>
+												<iframe
+													src="https://player.vimeo.com/video/682499551?h=790e25270b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+													frameborder="0"
+													allow="autoplay; fullscreen; picture-in-picture"
+													allowfullscreen=""
+													title="How to buy MetaET IDO?"
+													style="
+														position: absolute;
+														top: 0px;
+														left: 0px;
+														width: 100%;
+														height: 100%;
+													"
+												></iframe>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- 2.2 FAQ问题 -->
+								<div class="col-xl-7 col-xxl-12">
+									<div class="card">
+										<div class="card-header">
+											<h4 class="card-title">FAQ</h4>
+										</div>
+										<div class="card-body">
+											<div id="accordion-faq" class="accordion">
+												<div class="card">
+													<div class="card-header">
+														<h5
+															class="mb-0 collapsed c-pointer"
+															data-toggle="collapse"
+															data-target="#collapseOne1"
+															aria-expanded="false"
+															aria-controls="collapseOne1"
+														>
+															<i class="fa" aria-hidden="true"></i
+															>What is MetaET IDO?
+														</h5>
+													</div>
+													<div
+														id="collapseOne1"
+														class="collapse show"
+														data-parent="#accordion-faq"
+													>
+														<div class="card-body">
+															MetaET based on fair launch, except
+															that it is executed using soft cap
+															funds acquired through a IDO and is
+															intended to establish the initial
+															listing price and earn investors'
+															trust. The IDO or IDO will then
+															continue until the hard cap is reached,
+															at which point the cash raised will be
+															utilized to balance the liquidity,
+															further increasing the price.
+														</div>
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-header">
+														<h5
+															class="mb-0 collapsed c-pointer"
+															data-toggle="collapse"
+															data-target="#collapseTwo3"
+															aria-expanded="false"
+															aria-controls="collapseTwo3"
+														>
+															<i class="fa" aria-hidden="true"></i
+															>What wallet to use to participate in
+															IDO?
+														</h5>
+													</div>
+													<div
+														id="collapseTwo3"
+														class="collapse"
+														data-parent="#accordion-faq"
+													>
+														<div class="card-body">
+															MetaET is based on Binance smart chain,
+															so it is recommended that you use
+															Trustwallet or Metamask wallet to
+															participate in IDO.
+														</div>
+														<input id="refaltinput" type="text" />
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-header">
+														<h5
+															class="mb-0 collapsed c-pointer"
+															data-toggle="collapse"
+															data-target="#collapseTwo2"
+															aria-expanded="false"
+															aria-controls="collapseTwo2"
+														>
+															<i class="fa" aria-hidden="true"></i
+															>Can I sell my IDO/airdrop tokens
+															during IDO?
+														</h5>
+													</div>
+													<div
+														id="collapseTwo2"
+														class="collapse"
+														data-parent="#accordion-faq"
+													>
+														<div class="card-body">
+															No, airdrop tokens and IDO or IDO
+															tokens will be frozen until the IDO or
+															IDO concludes. This is to keep the
+															token price stable during the IDO time.
+															The IDO and Airdrop tokens will be
+															locked (they will be unable to be
+															transferred, traded, or swapped) until
+															the IDO is completed, at which point
+															the IDO tokens will be unlocked on a
+															50-50 basis. To avoid a price dump by
+															the airdroppers, the airdrop tokens
+															will be unlocked at a 50% monthly rate.
+														</div>
+														<input id="refaltinput2" type="text" />
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-header">
+														<h5
+															class="mb-0 collapsed c-pointer"
+															data-toggle="collapse"
+															data-target="#collapseThree3"
+															aria-expanded="false"
+															aria-controls="collapseThree3"
+														>
+															<i class="fa" aria-hidden="true"></i
+															>Can I buy From Pancakeswap During the
+															IDO period?
+														</h5>
+													</div>
+													<div
+														id="collapseThree3"
+														class="collapse"
+														data-parent="#accordion-faq"
+													>
+														<div class="card-body">
+															Yes, but the downside is that the token
+															price on pancakeswap will be
+															significantly higher than the IDO
+															price, and the advantage is that tokens
+															purchased through exchanges will not be
+															locked and will be freely tradeable,
+															transferable, and exchangeable.
+															However, from the same wallet, IDO
+															&amp; IDO tokens will remain locked
+															until after the IDO.
+														</div>
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-header">
+														<h5
+															class="mb-0 collapsed c-pointer"
+															data-toggle="collapse"
+															data-target="#collapseThree4"
+															aria-expanded="false"
+															aria-controls="collapseThree4"
+														>
+															<i class="fa" aria-hidden="true"></i
+															>How is the progress of IDO?
+														</h5>
+													</div>
+													<div
+														id="collapseThree4"
+														class="collapse"
+														data-parent="#accordion-faq"
+													>
+														<!-- IDO的进展内容，需要根据项目情况更新 -->
+														<div class="card-body">
+															IDO ()<br />Feb 28, 2022 - Mar 30,
+															2022<br />Amount: 1,000,000,000
+															MetaET<br />IDO unit Price:
+															0.00002BNB<br /><br />IDO First Round
+															(1not start)<br />Mar 30, 2022- April
+															29, 2022<br />Amount: 1,000,000,000
+															MetaET<br />IDO unit Price:
+															0.00004BNB<br /><br />IDO Second Round
+															(1not start)<br />April 29, 2022 - May
+															29, 2022<br />Amount: 1,000,000,000
+															MetaET<br />IDO unit Price:
+															0.00006BNB<br /><br />IDO Third Round
+															(1not start)<br />May 29, 2022 - June
+															28, 2022<br />Amount: 1,000,000,000
+															MetaET<br />IDO unit Price:
+															0.00008BNB<br />
+														</div>
+													</div>
+												</div>
+												<div class="card">
+													<div class="card-header">
+														<h5
+															class="mb-0 collapsed c-pointer"
+															data-toggle="collapse"
+															data-target="#collapseThree5"
+															aria-expanded="false"
+															aria-controls="collapseThree5"
+														>
+															<i class="fa" aria-hidden="true"></i
+															>Can I be able to Trade after the IDO
+														</h5>
+													</div>
+													<div
+														id="collapseThree5"
+														class="collapse"
+														data-parent="#accordion-faq"
+													>
+														<div class="card-body">
+															Unlock rules: IDO token and AIRDROP
+															token locked up to 28 June 2022. That's
+															mean with airdrop token you can't
+															transfer, can't trading , can't swap
+															before 28 June 2022<br />Unlock plan :
+															50% per month from 28 June 2022
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- index页面脚注 包含联系方式等 -->
+					<div class="footer">
+						<div class="container">
+							<div class="row align-items-center">
+								<!-- <div class="col-xl-6 col-md-6"> -->
+								<div class="col-xl-8 col-md-8">
+									<div class="copy_right">MetaET 2022 © All right reserved</div>
+								</div>
+								<!-- <div class="col-xl-6 col-md-6 text-lg-right text-center"> -->
+								<div class="col-xl-4 col-md-4 text-lg-right text-center">
+									<div class="social">
+										<a rel="noopener" target="_blank" href="https://twitter.com/MetaET_Channel"><i class="fa fa-twitter"></i></a
+										><a rel="noopener" target="_blank" href="https://t.me/MetaET_1"><i class="fa fa-telegram"></i></a
+										><a rel="noopener" target="_blank" href="https://t.me/MetaET_2"><i class="fa fa-telegram"></i></a
+										><a rel="noopener" target="_blank" href="https://t.me/MetaET_3"><i class="fa fa-telegram"></i></a
+										>
+										<!-- <a rel="noopener"><i class="fa fa-telegram"></i></a
+										><a rel="noopener"><i class="fa fa-telegram"></i></a
+										><a rel="noopener"><i class="fa fa-telegram"></i></a> -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- 点击 钱包链接后的弹出内容 让选择钱包进行链接-->
+					<!-- <div id="select_wallet" class="backdrop-box select-wallet flex-center" data-type="1"> -->
+					<div
+						id="select_wallet"
+						hidden="hidden"
+						class="backdrop-box select-wallet flex-center"
+						data-type="1"
+					>
+						<div id="select_wallet_box" class="select-wallet-box flex-tc">
+							<div class="select-wallet-panel">
+								<div
+									class="width100 align-l fs20"
+									style="
+										border-bottom: 1px solid rgb(238, 238, 238);
+										padding-bottom: 0.5rem;
+										color: rgb(0, 0, 0);
+									"
+								>
+									<div>Connect to a wallet</div>
+									<div
+										class="width100 align-l fs12"
+										style="color: rgb(102, 102, 102); line-height: 16px"
+									>
+										Only supports Binance Smart Network
+									</div>
+								</div>
+								<div id="connect_MetaMask" class="wallet-item flex-sb cursor">
+									<span class="wallet-name">MetaMask</span
+									><svg
+										viewBox="0 0 96 96"
+										width="32px"
+										color="text"
+										xmlns="http://www.w3.org/2000/svg"
+										class="icon-wallet"
+									>
+										<circle cx="48" cy="48" r="48" fill="#ddd"></circle>
+										<path
+											d="M77.7602 16.9155L51.9419 36.0497L56.7382 24.7733L77.7602 16.9155Z"
+											fill="#E17726"
+										></path>
+										<path
+											d="M18.2656 16.9155L43.8288 36.2283L39.2622 24.7733L18.2656 16.9155Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M68.4736 61.2808L61.6108 71.7918L76.3059 75.8482L80.4899 61.5104L68.4736 61.2808Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M15.5356 61.5104L19.6941 75.8482L34.3892 71.7918L27.5519 61.2808L15.5356 61.5104Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M33.5984 43.5251L29.491 49.699L44.0584 50.3624L43.5482 34.6724L33.5984 43.5251Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M62.4274 43.525L52.2991 34.4937L51.9419 50.3622L66.5094 49.6989L62.4274 43.525Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M34.3892 71.7922L43.1654 67.5316L35.6137 61.6128L34.3892 71.7922Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M52.8345 67.5316L61.6107 71.7922L60.3861 61.6128L52.8345 67.5316Z"
+											fill="#E27625"
+										></path>
+										<path
+											d="M61.6107 71.7923L52.8345 67.5317L53.5233 73.2465L53.4468 75.6446L61.6107 71.7923Z"
+											fill="#D5BFB2"
+										></path>
+										<path
+											d="M34.3892 71.7923L42.5531 75.6446L42.502 73.2465L43.1654 67.5317L34.3892 71.7923Z"
+											fill="#D5BFB2"
+										></path>
+										<path
+											d="M42.7062 57.8369L35.4097 55.6939L40.5631 53.3213L42.7062 57.8369Z"
+											fill="#233447"
+										></path>
+										<path
+											d="M53.2937 57.8369L55.4367 53.3213L60.6412 55.6939L53.2937 57.8369Z"
+											fill="#233447"
+										></path>
+										<path
+											d="M34.3893 71.7918L35.6649 61.2808L27.552 61.5104L34.3893 71.7918Z"
+											fill="#CC6228"
+										></path>
+										<path
+											d="M60.3352 61.2808L61.6108 71.7918L68.4736 61.5104L60.3352 61.2808Z"
+											fill="#CC6228"
+										></path>
+										<path
+											d="M66.5094 49.6987L51.9419 50.362L53.294 57.8371L55.4371 53.3215L60.6416 55.6941L66.5094 49.6987Z"
+											fill="#CC6228"
+										></path>
+										<path
+											d="M35.4098 55.6941L40.5633 53.3215L42.7063 57.8371L44.0584 50.362L29.491 49.6987L35.4098 55.6941Z"
+											fill="#CC6228"
+										></path>
+										<path
+											d="M29.491 49.6987L35.6139 61.6129L35.4098 55.6941L29.491 49.6987Z"
+											fill="#E27525"
+										></path>
+										<path
+											d="M60.6414 55.6941L60.3862 61.6129L66.5092 49.6987L60.6414 55.6941Z"
+											fill="#E27525"
+										></path>
+										<path
+											d="M44.0584 50.3618L42.7063 57.8369L44.4156 66.6641L44.7728 55.0305L44.0584 50.3618Z"
+											fill="#E27525"
+										></path>
+										<path
+											d="M51.9415 50.3618L51.2527 55.005L51.5843 66.6641L53.2937 57.8369L51.9415 50.3618Z"
+											fill="#E27525"
+										></path>
+										<path
+											d="M53.2938 57.8374L51.5845 66.6646L52.8346 67.532L60.3862 61.6132L60.6413 55.6943L53.2938 57.8374Z"
+											fill="#F5841F"
+										></path>
+										<path
+											d="M35.4097 55.6943L35.6138 61.6132L43.1654 67.532L44.4155 66.6646L42.7062 57.8374L35.4097 55.6943Z"
+											fill="#F5841F"
+										></path>
+										<path
+											d="M53.4468 75.6443L53.5233 73.2462L52.8855 72.6849H43.1143L42.502 73.2462L42.5531 75.6443L34.3892 71.792L37.2465 74.1391L43.0378 78.1445H52.962L58.7533 74.1391L61.6107 71.792L53.4468 75.6443Z"
+											fill="#C0AC9D"
+										></path>
+										<path
+											d="M52.8346 67.5315L51.5845 66.6641H44.4156L43.1655 67.5315L42.5022 73.2462L43.1145 72.6849H52.8857L53.5235 73.2462L52.8346 67.5315Z"
+											fill="#161616"
+										></path>
+										<path
+											d="M78.8314 37.2998L80.9999 26.7377L77.7599 16.9155L52.8345 35.4119L62.4271 43.5247L75.9485 47.4791L78.9335 43.984L77.6323 43.04L79.7243 41.1521L78.1426 39.902L80.2091 38.3458L78.8314 37.2998Z"
+											fill="#763E1A"
+										></path>
+										<path
+											d="M15 26.7377L17.194 37.2998L15.7909 38.3458L17.8574 39.902L16.2756 41.1521L18.3676 43.04L17.0665 43.984L20.0514 47.4791L33.5984 43.5247L43.1655 35.4119L18.2656 16.9155L15 26.7377Z"
+											fill="#763E1A"
+										></path>
+										<path
+											d="M75.9487 47.4793L62.4272 43.5249L66.5092 49.6989L60.3862 61.613L68.4736 61.511H80.4898L75.9487 47.4793Z"
+											fill="#F5841F"
+										></path>
+										<path
+											d="M33.5983 43.5249L20.0513 47.4793L15.5356 61.511H27.5519L35.6137 61.613L29.4908 49.6989L33.5983 43.5249Z"
+											fill="#F5841F"
+										></path>
+										<path
+											d="M51.9415 50.3617L52.8344 35.4115L56.7378 24.7729H39.262L43.1653 35.4115L44.0583 50.3617L44.3899 55.0559L44.4154 66.664H51.5843L51.6099 55.0559L51.9415 50.3617Z"
+											fill="#F5841F"
+										></path>
+									</svg>
+								</div>
+								<div id="connect_binance" class="wallet-item flex-sb cursor">
+									<span class="wallet-name">Binance Chain Wallet</span
+									><svg
+										viewBox="0 0 32 32"
+										width="32px"
+										color="text"
+										xmlns="http://www.w3.org/2000/svg"
+										class="icon-wallet"
+									>
+										<path
+											d="M24 0H8C3.58172 0 0 3.58172 0 8V24C0 28.4183 3.58172 32 8 32H24C28.4183 32 32 28.4183 32 24V8C32 3.58172 28.4183 0 24 0Z"
+											fill="#333"
+										></path>
+										<path
+											d="M16.2857 4L9.97035 7.6761L12.2922 9.03415L16.2857 6.7161L20.2792 9.03415L22.6011 7.6761L16.2857 4Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M20.2792 10.9541L22.6011 12.3122V15.0283L18.6075 17.3463V21.9824L16.2857 23.3405L13.9639 21.9824V17.3463L9.97035 15.0283V12.3122L12.2922 10.9541L16.2857 13.2722L20.2792 10.9541Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M22.6011 16.9483V19.6644L20.2792 21.0224V18.3063L22.6011 16.9483Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M20.2561 22.9424L24.2496 20.6244V15.9883L26.5714 14.6302V21.9824L20.2561 25.6585V22.9424Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M24.2496 11.3522L21.9278 9.99414L24.2496 8.63609L26.5714 9.99414V12.7102L24.2496 14.0683V11.3522Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M13.9639 26.642V23.9259L16.2857 25.2839L18.6075 23.9259V26.642L16.2857 28L13.9639 26.642Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M12.2922 21.0224L9.97035 19.6644V16.9483L12.2922 18.3063V21.0224Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M16.2857 11.3522L13.9639 9.99414L16.2857 8.63609L18.6075 9.99414L16.2857 11.3522Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M10.6437 9.99414L8.32183 11.3522V14.0683L6 12.7102V9.99414L8.32183 8.63609L10.6437 9.99414Z"
+											fill="#F0B90B"
+										></path>
+										<path
+											d="M6 14.6302L8.32183 15.9883V20.6244L12.3154 22.9424V25.6585L6 21.9824V14.6302Z"
+											fill="#F0B90B"
+										></path>
+									</svg>
+								</div>
+								<div id="connect_Trust" class="wallet-item flex-sb cursor">
+									<span class="wallet-name">TrustWallet</span
+									><svg
+										viewBox="0 0 96 96"
+										width="32px"
+										color="text"
+										xmlns="http://www.w3.org/2000/svg"
+										class="icon-wallet"
+									>
+										<g clip-path="url(#clip-trustwallet)">
+											<path
+												d="M48.0048 96.0097C74.5172 96.0097 96.0097 74.5172 96.0097 48.0048C96.0097 21.4925 74.5172 0 48.0048 0C21.4925 0 0 21.4925 0 48.0048C0 74.5172 21.4925 96.0097 48.0048 96.0097Z"
+												fill="#3375BB"
+											></path>
+											<path
+												d="M48.0048 22.8922L49.3179 21.1833C48.9399 20.8928 48.4766 20.7354 48 20.7354C47.5233 20.7354 47.06 20.8928 46.682 21.1833L48.0048 22.8922ZM70.5783 29.5252H72.7313C72.7352 29.2396 72.6824 28.9561 72.576 28.6909C72.4696 28.4258 72.3118 28.1844 72.1116 27.9806C71.9114 27.7769 71.6729 27.6148 71.4097 27.5037C71.1465 27.3926 70.8639 27.3348 70.5783 27.3335V29.5252ZM48.0048 75.6377L46.8076 77.4335C47.1604 77.6697 47.5754 77.7958 48 77.7958C48.4245 77.7958 48.8395 77.6697 49.1924 77.4335L48.0048 75.6377ZM25.4506 29.5252V27.3625C25.165 27.3638 24.8824 27.4216 24.6192 27.5327C24.356 27.6437 24.1175 27.8058 23.9173 28.0096C23.7171 28.2134 23.5593 28.4548 23.4529 28.7199C23.3465 28.985 23.2937 29.2686 23.2976 29.5542L25.4506 29.5252ZM46.6917 24.5915C56.4626 32.1611 67.6528 31.6783 70.5879 31.6783V27.3625C67.5466 27.3625 57.8047 27.7487 49.3468 21.1833L46.6917 24.5915ZM68.4348 29.4866C68.2707 39.4892 67.8459 46.5471 67.0349 51.7704C66.2238 56.9938 65.1039 60.0448 63.6266 62.2268C62.1494 64.4089 60.257 65.8282 57.486 67.4792C54.715 69.1302 51.1716 70.9646 46.8076 73.8515L49.2406 77.4335C53.373 74.6818 56.8102 72.9246 59.7357 71.1771C62.6835 69.5717 65.2416 67.3367 67.228 64.6309C69.159 61.7344 70.4817 57.8724 71.3314 52.427C72.181 46.9815 72.6155 39.6534 72.7796 29.5542L68.4348 29.4866ZM49.2406 73.8515C44.9055 70.955 41.3718 69.1592 38.6201 67.4888C35.8684 65.8185 33.976 64.4861 32.4892 62.2268C31.0023 59.9676 29.7954 56.9648 28.9651 51.7704C28.1347 46.576 27.7678 39.4892 27.6037 29.4866L23.2976 29.5542C23.4617 39.6534 23.9058 47.0009 24.7458 52.427C25.5858 57.8531 26.8699 61.7151 28.8395 64.6309C30.8164 67.3382 33.3686 69.5739 36.3125 71.1771C39.2091 72.9246 42.6752 74.6818 46.8076 77.4335L49.2406 73.8515ZM25.4506 31.6783C28.3471 31.6783 39.547 32.1611 49.3179 24.5915L46.682 21.1833C38.2049 27.7487 28.463 27.3625 25.441 27.3625L25.4506 31.6783Z"
+												fill="white"
+											></path>
+										</g>
+										<defs>
+											<clipPath id="clip-trustwallet">
+												<rect width="96" height="96" fill="white"></rect>
+											</clipPath>
+										</defs>
+									</svg>
+								</div>
+								<div id="connect_Math" class="wallet-item flex-sb cursor">
+									<span class="wallet-name">MathWallet</span
+									><span class="math-wallet"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Vimeo Player API 允许您与嵌入式 Vimeo Player 进行交互并对其进行控制。 -->
+					<script src="https://player.vimeo.com/api/player.js" async=""></script>
+				</div>
+			</div>
+		</div>
+
+		<!-- jquery包引入 -->
+		<!-- 不可注释，否则 JOIN AIRDROP 标签点击无反应 -->
+		<script src="./static/jquery.min.js"></script>
+
+		<!-- web3相关包引入 -->
+		<!-- Web3Modal 和 walletconnect 连接钱包 -->
+		<!-- <script type="text/javascript" src="./static/web3.min.js"></script> -->
+		<!-- <script type="text/javascript" src="https://unpkg.com/web3modal"></script> -->
+		<!-- <script
+			type="text/javascript"
+			src="https://unpkg.com/@walletconnect/web3-provider"
+		></script> -->
+
+		<!--  Bootstrap 它是最流行的 HTML、CSS 和 JavaScript 框架，用于创建响应式、移动优先的网站。 -->
+		<script src="./static/bootstrap.bundle.min.js"></script>
+		<!--  waves 点击特效涟漪等 只需要引入 waves.min.css 和 waves.min.js 到 HTML 文件中可以使用了-->
+		<script src="./static/waves.min.js"></script>
+		<!-- Magnific Popup 是一个非常优秀的弹出对话框或者灯箱效果插件。 它基于jQuery（zepto）开发，使用非常简单，特点就是：非常好用。 -->
+		<script src="./static/magnific-popup.js"></script>
+		<script src="./static/magnific-popup-init.js"></script>
+
+		<!-- jQuery设置加载后的一些动作 -->
+		<script src="./static/scripts.js"></script>
+
+		<!-- 可注释，注释后能正常显示。这里怀疑是主要js功能 -->
+		<!-- <script>
+			!(function (e) {
+				function t(t) {
+					for (var n, f, l = t[0], a = t[1], i = t[2], c = 0, s = []; c < l.length; c++)
+						(f = l[c]),
+							Object.prototype.hasOwnProperty.call(o, f) && o[f] && s.push(o[f][0]),
+							(o[f] = 0);
+					for (n in a) Object.prototype.hasOwnProperty.call(a, n) && (e[n] = a[n]);
+					for (p && p(t); s.length; ) s.shift()();
+					return u.push.apply(u, i || []), r();
+				}
+				function r() {
+					for (var e, t = 0; t < u.length; t++) {
+						for (var r = u[t], n = !0, l = 1; l < r.length; l++) {
+							var a = r[l];
+							0 !== o[a] && (n = !1);
+						}
+						n && (u.splice(t--, 1), (e = f((f.s = r[0]))));
+					}
+					return e;
+				}
+				var n = {},
+					o = { 1: 0 },
+					u = [];
+				function f(t) {
+					if (n[t]) return n[t].exports;
+					var r = (n[t] = { i: t, l: !1, exports: {} });
+					return e[t].call(r.exports, r, r.exports, f), (r.l = !0), r.exports;
+				}
+				(f.m = e),
+					(f.c = n),
+					(f.d = function (e, t, r) {
+						f.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r });
+					}),
+					(f.r = function (e) {
+						"undefined" != typeof Symbol &&
+							Symbol.toStringTag &&
+							Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+							Object.defineProperty(e, "__esModule", { value: !0 });
+					}),
+					(f.t = function (e, t) {
+						if ((1 & t && (e = f(e)), 8 & t)) return e;
+						if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+						var r = Object.create(null);
+						if (
+							(f.r(r),
+							Object.defineProperty(r, "default", { enumerable: !0, value: e }),
+							2 & t && "string" != typeof e)
+						)
+							for (var n in e)
+								f.d(
+									r,
+									n,
+									function (t) {
+										return e[t];
+									}.bind(null, n)
+								);
+						return r;
+					}),
+					(f.n = function (e) {
+						var t =
+							e && e.__esModule
+								? function () {
+										return e.default;
+								  }
+								: function () {
+										return e;
+								  };
+						return f.d(t, "a", t), t;
+					}),
+					(f.o = function (e, t) {
+						return Object.prototype.hasOwnProperty.call(e, t);
+					}),
+					(f.p = "/");
+				var l = (this.webpackJsonpmetaufo = this.webpackJsonpmetaufo || []),
+					a = l.push.bind(l);
+				(l.push = t), (l = l.slice());
+				for (var i = 0; i < l.length; i++) t(l[i]);
+				var p = a;
+				r();
+			})([]);
+		</script> -->
+
+		<!-- 可注释，ido页面加载后的js功能实现 即 主要的js函数事件绑定内容。  可注释后重写功能实现。-->
+		<!-- <script src="./static/js/2.c0fbae3a.chunk.js"></script> -->
+
+		<!-- 可注释，定制 index页面 的主要js实现各个标签元素的点击事件，例如 顶栏菜单导航 及 页脚的电报群组链接。  可注释后重写功能实现。-->
+		<!-- <script src="./static/js/main.b6758426.chunk.js"></script> -->
+
+		<!-- MetaET重新数造js渲染 -->
+		<script src="./index_MetaET_JS/jquery.min.js"></script>
+		<script src="./index_MetaET_JS/web3_1.2.6.min.js"></script>
+
+		<!-- <script src="./index_MetaET_JS/ethers-5.2.umd.min.js"></script> -->
+
+		<script
+			src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js"
+			type="application/javascript"
+		></script>
+		<!-- <script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script> -->
+
+		<!-- 分割线 -->
+		<!-- <script src="./index_MetaET_JS_web3.js"></script> -->
+		<script src="./index_MetaET_JS_ethers.js"></script>
+	</body>
+</html>
